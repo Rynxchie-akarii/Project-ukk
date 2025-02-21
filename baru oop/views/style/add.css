@@ -1,0 +1,129 @@
+<style>
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background-color: #f4f4f4;
+    margin: 0;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #343a40;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    color: #495057;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.btn-submit {
+    width: 48%; /* Set both buttons to have nearly equal width */
+    padding: 12px;
+    font-size: 16px;
+    color: white;
+    background-color: #007bff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn-submit:hover {
+    background-color: #0056b3;
+}
+
+/* Container for the buttons */
+.btn-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.btn-cancel {
+    width: 48%; /* Set both buttons to have nearly equal width */
+    padding: 12px;
+    font-size: 16px;
+    color: white;
+    background-color: #f44336;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn-cancel:hover {
+    background-color: #d32f2f;
+}
+
+.radio-buttons {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.radio-buttons label {
+    font-size: 16px;
+}
+
+.radio-buttons input {
+    margin-right: 8px;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .container {
+        width: 90%; /* Set to 90% for small screens */
+        padding: 20px;
+    }
+
+    h2 {
+        font-size: 22px; /* Adjust heading font size for small screens */
+    }
+
+    .form-group input {
+        padding: 8px; /* Slightly smaller padding for inputs */
+    }
+
+    .btn-submit, .btn-cancel {
+        width: 100%; /* Full-width buttons on smaller screens */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    h2 {
+        font-size: 20px; /* Further adjust heading font size for very small screens */
+    }
+
+    .form-group input {
+        font-size: 14px; /* Adjust input font size */
+    }
+
+    .btn-submit, .btn-cancel {
+        padding: 10px; /* Reduce button padding */
+    }
+}
+</style>

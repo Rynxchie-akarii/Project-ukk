@@ -1,0 +1,84 @@
+/* General styles for table */
+table {
+    width: 100%; /* Make the table take up full width */
+    border-collapse: collapse;
+}
+
+table th, table td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+/* Percantik th */
+table th {
+    background-color: #4CAF50; /* Green background */
+    color: white; /* White text */
+    font-size: 18px; /* Bigger font size for headers */
+    font-weight: bold;
+    text-transform: uppercase; /* Make the text uppercase */
+    letter-spacing: 1px; /* Add space between letters */
+    border: 1px solid #388E3C; /* Darker border for a subtle effect */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    text-align: center; /* Center text in th */
+    transition: all 0.3s ease;
+}
+
+table th:hover {
+    background-color: #45a049; /* Slightly darker green on hover */
+    transform: translateY(-2px); /* Slight lift effect */
+}
+
+/* Tabel td */
+table td a {
+    text-decoration: none;
+    color: #4CAF50; /* Green links */
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+table td a:hover {
+    color: #388E3C; /* Darker green on hover */
+}
+
+/* Container for table and buttons */
+.content-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px; /* Spacing between table and buttons */
+}
+
+/* Button Container for alignment */
+.button-container {
+    display: flex;
+    gap: 20px; /* Space between buttons */
+    justify-content: flex-start;
+}
+
+/* Button Styles */
+.btn {
+    background-color: #4CAF50; /* Green background */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #45a049;
+}
+
+.cancel-btn {
+    background-color: #f44336; /* Red background */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.cancel-btn:hover {
+    background-color: #e53935;
+}

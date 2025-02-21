@@ -1,0 +1,95 @@
+/* Hero Section */
+.hero {
+    background-color: #3498db;
+    color: white;
+    text-align: center;
+    padding: 50px 20px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+
+.hero h1 {
+    font-size: 36px;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.hero-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;  /* Memberikan jarak antara tombol */
+}
+
+.hero-links .btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    text-decoration: none;
+    color: white;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.hero-links .btn:hover {
+    background-color: #2980b9;
+    transform: scale(1.05);
+}
+
+.hero-links .btn-warning {
+    background-color: #f39c12;
+}
+
+.hero-links .btn-primary {
+    background-color: #3498db;
+}
+
+/* Navbar Styling */
+nav {
+    background-color: #3498db;
+    padding: 15px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-item {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    margin: 0 20px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.navbar-item:hover {
+    background-color: #2980b9;
+    color: #ecf0f1;
+}
+
+.navbar-item.active {
+    background-color: #1abc9c;
+}
+
+.navbar-item.login {
+    background-color: #f39c12;
+}
+
+.navbar-item.logout {
+    background-color: #e74c3c;
+}
+
+.navbar-item.welcome {
+    font-weight: bold;
+}

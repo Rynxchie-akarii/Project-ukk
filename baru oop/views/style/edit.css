@@ -1,0 +1,36 @@
+<style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+}
+.container label {
+    font-weight: bold;
+    margin-top: 10px;
+}
+.container input[type="text"],
+.container input[type="number"],
+.container input[type="date"],
+.container input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0 15px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+.container input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+}
+.container input[type="submit"]:hover {
+    background-color: #45a049;
+}
+</style>
