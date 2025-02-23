@@ -61,6 +61,13 @@ h1 {
     background-color: #fff8e1; /* Light yellow for required fields */
 }
 
+/* Flex container for buttons */
+.button-container {
+    display: flex;
+    justify-content: space-between; /* Distribute the space evenly */
+    gap: 20px; /* Space between buttons */
+}
+
 /* Submit Button */
 .btn-submit {
     width: 100%;
@@ -77,6 +84,24 @@ h1 {
 
 .btn-submit:hover {
     background-color: #45a049;
+}
+
+/* Cancel Button */
+.btn-cancel {
+    width: 100%;
+    padding: 12px;
+    background-color: #f44336;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-cancel:hover {
+    background-color: #e53935;
 }
 
 /* Add some space at the bottom of the page */

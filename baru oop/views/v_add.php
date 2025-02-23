@@ -4,6 +4,12 @@ include_once "../models/HpModel.php";
 
 // Membuat objek HpModel
 $hpModel = new HpModel();
+
+// Mengambil semua supplier
+$suppliers = $hpModel->getAllSuppliers(); // Pastikan untuk mendapatkan data supplier
+
+// Jangan lupa untuk menutup koneksi setelah data diambil
+$hpModel->closeConnection();
 ?>
 
 <!DOCTYPE html>
@@ -52,18 +58,18 @@ $hpModel = new HpModel();
             <input type="date" name="tanggal_masuk" required>
         </div>
 
-        <!-- Dropdown untuk memilih Supplier -->
-        <div class="form-group">
-            <label for="id_supplier">Pilih Supplier:</label>
-            <select name="id_supplier" required>
-                <option value="" disabled selected>Pilih Supplier</option>
-                <?php foreach ($suppliers as $supplier): ?>
-                    <option value="<?php echo $supplier['id_supplier']; ?>">
-                        <?php echo $supplier['name']; ?>
-                    </option>
-                <?php endforeach; ?>
-            </select>
-        </div>
+            <!-- Dropdown untuk memilih Supplier -->
+            <div class="form-group">
+                <label for="id_supplier">Pilih Supplier:</label>
+                <select name="id_supplier" required>
+                    <option value="" disabled selected>Pilih Supplier</option>
+                    <?php foreach ($suppliers as $supplier): ?>
+                        <option value="<?php echo $supplier['id_supplier']; ?>">
+                            <?php echo $supplier['nama_supplier']; ?> <!-- Menampilkan Nama Supplier -->
+                        </option>
+                    <?php endforeach; ?>
+                </select>
+            </div>
 
         <!-- Button container -->
         <div class="btn-container">

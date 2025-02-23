@@ -1,4 +1,12 @@
-<!-- V_login.php -->
+<?php
+session_start(); // Memulai sesi untuk memeriksa apakah pengguna sudah login
+
+// Jika pengguna sudah login, arahkan ke dashboard
+if (isset($_SESSION['username'])) {
+    header("Location: ../views/dashboard.php");
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,7 +19,7 @@
     <div class="login-container">
         <h2>Login</h2>
         <form action="../controllers/auth_controller.php" method="POST">
-        <div class="form-group">
+            <div class="form-group">
                 <label for="username">Username:</label>
                 <input type="text" name="username" id="username" required>
             </div>

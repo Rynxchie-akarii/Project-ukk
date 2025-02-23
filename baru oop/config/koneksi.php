@@ -5,7 +5,7 @@ class Koneksi
     private $server_name = 'localhost';
     private $username = 'root';
     private $pass = '';
-    private $db = 'db_hp';
+    private $db = 'db_gudanghp';
     public $conn;
 
     public function __construct()

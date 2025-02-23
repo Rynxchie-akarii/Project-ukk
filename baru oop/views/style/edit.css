@@ -1,36 +1,89 @@
-<style>
+/* Body and container */
 body {
-    font-family: Arial, sans-serif;
-    margin: 20px;
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f7f6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
 }
+
+/* Container for the form */
 .container {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    background-color: #f9f9f9;
-}
-.container label {
-    font-weight: bold;
-    margin-top: 10px;
-}
-.container input[type="text"],
-.container input[type="number"],
-.container input[type="date"],
-.container input[type="submit"] {
+    background-color: #fff;
     width: 100%;
-    padding: 10px;
-    margin: 5px 0 15px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
+    max-width: 500px;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
 }
-.container input[type="submit"] {
+
+/* Title of the page */
+h2 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Labels and inputs */
+label {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 8px;
+    display: block;
+    text-align: left;
+}
+
+/* Input styles */
+input[type="text"],
+input[type="number"],
+input[type="date"] {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    font-size: 16px;
+    box-sizing: border-box;
+    transition: border 0.3s ease;
+}
+
+/* Focus effect on input fields */
+input[type="text"]:focus,
+input[type="number"]:focus,
+input[type="date"]:focus {
+    border-color: #4CAF50;
+    outline: none;
+}
+
+/* Submit button */
+input[type="submit"] {
+    width: 100%;
+    padding: 12px;
     background-color: #4CAF50;
     color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
-.container input[type="submit"]:hover {
+
+/* Hover effect on submit button */
+input[type="submit"]:hover {
     background-color: #45a049;
 }
-</style>
+
+/* Responsive design for mobile */
+@media screen and (max-width: 600px) {
+    .container {
+        width: 90%;
+        padding: 20px;
+    }
+
+    input[type="submit"] {
+        font-size: 14px;
+    }
+}

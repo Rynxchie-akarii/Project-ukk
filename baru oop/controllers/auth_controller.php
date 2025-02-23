@@ -1,63 +1,68 @@
 <?php
-    include "../models/user_model.php";
+session_start(); // Mulai sesi untuk dapat mengatur variabel sesi
 
-    $user = new Login();
+include "../models/user_model.php"; // Include model user untuk login
 
-    if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['login'])) {
-        $username = $_POST['username'];
-        $password = sha1($_POST['password']);
-        
-        $aksi = $user->login($username, $password);
+$user = new Login(); // Inisialisasi objek Login
 
-        if ($aksi) {
-            $_SESSION['username'] = $username;
+// Fungsi untuk menangani pesan error
+function redirectWithMessage($url, $message) {
+    $_SESSION['message'] = $message;
+    header("Location: $url");
+    exit;
+}
 
-            // Successful login, redirect user to the main page
-            ?>
-            <script type="text/javascript">
-                alert('Anda Berhasil Login');
-                setTimeout("location.href='../views/tampil_data.php'", 1000);
-            </script>
-            <?php
-        } else {
-            ?>
-            <script type="text/javascript">
-                alert('Username dan Password salah');
-                setTimeout("location.href='../v_login.php'", 1000);
-            </script>
-            <?php
-        }
+// Login Proses
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['login'])) {
+    $username = htmlspecialchars(trim($_POST['username'])); // Sanitasi input
+    $password = $_POST['password']; // Password tidak langsung disha1 kan
+
+    // Validasi input (misal: tidak boleh kosong)
+    if (empty($username) || empty($password)) {
+        redirectWithMessage('../views/v_login.php', 'Username atau password tidak boleh kosong');
     }
 
-    if (isset($_GET['aksi']) && $_GET['aksi'] == 'logout') {
-        session_destroy();
-        ?>
-        <script type="text/javascript">
-            alert('Anda telah keluar dari system');
-            setTimeout("location.href='../Views/v_login.php'", 1000);
-        </script>
-        <?php
+    // Melakukan proses login dan validasi password dengan password_verify
+    $aksi = $user->login($username, $password);
+
+    if ($aksi) {
+        // Login berhasil, set session username
+        $_SESSION['username'] = $username;
+        // Arahkan ke halaman dashboard setelah login berhasil
+        header("Location: ../views/dashboard.php");
+        exit;
+    } else {
+        // Login gagal, kembalikan ke halaman login dengan pesan error
+        redirectWithMessage('../views/v_login.php', 'Username atau password salah');
+    }
+}
+
+// Logout Proses
+if (isset($_GET['aksi']) && $_GET['aksi'] == 'logout') {
+    session_destroy();
+    redirectWithMessage('../views/v_login.php', 'Anda telah keluar dari sistem');
+}
+
+// Registrasi Akun Baru
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['tambah_akun'])) {
+    $username = htmlspecialchars(trim($_POST['username'])); // Sanitasi input
+    $password = $_POST['password'];
+
+    // Validasi input
+    if (empty($username) || empty($password)) {
+        redirectWithMessage('../views/v_registrasi.php', 'Username atau password tidak boleh kosong');
     }
 
-    if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['tambah_akun'])) {
-        $username = $_POST['username'];
-        $password = sha1($_POST['password']);
-        $aksi = $user->tambah_akun($username, $password);
+    // Hash password menggunakan password_hash yang lebih aman
+    $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
-        if ($aksi) {
-            ?>
-            <script type="text/javascript">
-                alert('Akun berhasil ditambahkan');
-                setTimeout("location.href='../Views/v_login.php'", 1000);
-            </script>
-            <?php    
-        } else {
-            ?>
-            <script type="text/javascript">
-                alert('Akun gagal ditambahkan');
-                setTimeout("location.href='../Views/v_registrasi.php'", 1000);
-            </script>
-            <?php     
-        }
+    // Melakukan proses penambahan akun
+    $aksi = $user->tambah_akun($username, $hashedPassword);
+
+    if ($aksi) {
+        redirectWithMessage('../views/v_login.php', 'Akun berhasil ditambahkan');
+    } else {
+        redirectWithMessage('../views/v_registrasi.php', 'Akun gagal ditambahkan');
     }
+}
 ?>

@@ -1,0 +1,21 @@
+/* CSS untuk mengatur content di tengah dan bagian bawah */
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;  /* Menyusun konten di bagian bawah */
+    align-items: center;       /* Menyusun konten di tengah secara horizontal */
+    height: 50vh;             /* Membuat content mengisi 100% tinggi viewport */
+    padding: 20px;
+    text-align: center;
+}
+
+/* Styling tambahan untuk teks jika perlu */
+h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 18px;
+    color: #555;
+}

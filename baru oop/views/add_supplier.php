@@ -5,8 +5,8 @@ include_once "../models/SupplierModel.php";
 // Membuat objek SupplierModel
 $supplierModel = new SupplierModel();
 
-// Mengambil daftar kategori supplier (misalnya dari database)
-$categories = $supplierModel->getCategories(); // Anggap Anda memiliki method untuk mengambil kategori
+// Mengambil daftar supplier (misalnya dari database)
+$suppliers = $supplierModel->getAllSuppliers(); // Pastikan ada method getAllSuppliers() yang mengambil daftar supplier
 ?>
 
 <!DOCTYPE html>
@@ -34,22 +34,16 @@ $categories = $supplierModel->getCategories(); // Anggap Anda memiliki method un
                 <input type="text" name="no_telepon" id="no_telepon" required>
             </div>
 
-            <!-- Dropdown untuk memilih kategori supplier -->
-            <div class="form-group">
-                <label for="kategori_supplier">Kategori Supplier:</label>
-                <select name="kategori_supplier" id="kategori_supplier" required>
-                    <option value="" disabled selected>Pilih Kategori Supplier</option>
-                    <?php foreach ($categories as $category): ?>
-                        <option value="<?php echo $category['id_kategori']; ?>">
-                            <?php echo $category['nama_kategori']; ?>
-                        </option>
-                    <?php endforeach; ?>
-                </select>
+                        <div class="form-group">
+                <!-- Tombol Submit (Tambah Supplier) -->
+                <button type="submit" class="btn-submit">Tambah Supplier</button>
             </div>
 
             <div class="form-group">
-                <button type="submit" class="btn-submit">Tambah Supplier</button>
+                <!-- Tombol Cancel yang mengarah ke supplier.php -->
+                <a href="supplier.php" class="btn-cancel">Cancel</a>
             </div>
+
         </form>
     </div>
 </body>

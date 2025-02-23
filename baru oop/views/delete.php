@@ -7,6 +7,6 @@ if (isset($_GET['id'])) {
     $hpModel->deleteHp($id);
 
     // Redirect to index.php after deleting
-    header("Location: index.php");
+    header("Location: tampil_data.php");
 }
 ?>

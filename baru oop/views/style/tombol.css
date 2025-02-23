@@ -1,0 +1,64 @@
+/* Styling untuk container tombol */
+.button-container {
+    display: flex;
+    justify-content: center; /* Menyusun tombol secara horizontal di tengah */
+    gap: 20px; /* Memberi jarak antara tombol */
+    margin-top: 30px;
+}
+
+/* Kelas umum untuk tombol */
+.btn, .cancel-btn {
+    display: inline-block;
+    padding: 12px 30px;
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 8px; /* Membuat sudut tombol membulat */
+    cursor: pointer;
+    transition: all 0.3s ease-in-out; /* Efek transisi halus */
+    text-transform: uppercase; /* Mengubah teks menjadi huruf kapital */
+    flex-shrink: 0; /* Menghindari tombol mengecil */
+}
+
+/* Styling untuk tombol 'Tambah Supplier' */
+.btn {
+    background-color: #2d87f0; /* Warna biru */
+    color: white;
+    border: 2px solid #2d87f0;
+}
+
+.btn:hover {
+    background-color: white;
+    color: #2d87f0;
+    border: 2px solid #2d87f0;
+    transform: translateY(-3px); /* Efek sedikit terangkat saat hover */
+}
+
+/* Styling untuk tombol 'Cancel' */
+.cancel-btn {
+    background-color: #f44336; /* Warna merah */
+    color: white;
+    border: 2px solid #f44336;
+}
+
+.cancel-btn:hover {
+    background-color: white;
+    color: #f44336;
+    border: 2px solid #f44336;
+    transform: translateY(-3px); /* Efek sedikit terangkat saat hover */
+}
+
+/* Efek focus pada tombol */
+.btn:focus, .cancel-btn:focus {
+    outline: none;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsivitas untuk layar kecil */
+@media (max-width: 768px) {
+    .button-container {
+        flex-direction: column; /* Menyusun tombol secara vertikal di layar kecil */
+        gap: 10px; /* Mengurangi jarak antar tombol */
+    }
+}
